@@ -5,47 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Md Rajib Hassan | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <!-- preloader -->
     <div class="preloader" id="preloader">
-      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-        <path
-          id="preloaderSvg"
-          d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
-        ></path>
-      </svg>
+      <div class="loader-circle"></div>
 
       <div class="preloader-heading">
-        <div class="load-text">
-          <span>L</span>
-          <span>o</span>
-          <span>a</span>
-          <span>d</span>
-          <span>i</span>
-          <span>n</span>
-          <span>g</span>
-        </div>
+        <div class="load-text">Loading</div>
       </div>
     </div>
 
     <!-- back to top -->
 
-    <div class="progress-wrap" id="scrollUp">
-      <svg
-        class="progress-circle"
-        width="100%"
-        height="100%"
-        viewBox="-1 -1 102 102"
-      >
+    <div class="progress-wrap" id="scrollUp" aria-label="Scroll to top">
+      <svg class="progress-circle" viewBox="-1 -1 102 102">
+        <!-- Gradient definition -->
+        <defs>
+          <linearGradient
+            id="progressGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="#ff8a00" />
+            <stop offset="100%" stop-color="#00ff88" />
+          </linearGradient>
+        </defs>
+
         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
       </svg>
+
+      <i class="fa-solid fa-arrow-up"></i>
     </div>
 
     <!-- hero -->
     <section class="hero-section" id="intro">
-      <!-- SVG TEXT -->
-
       <div class="container">
         <div class="hero-grid">
           <!-- LEFT CONTENT -->
@@ -55,7 +55,7 @@
 
             <!-- MOBILE IMAGE -->
             <div class="hero-image mobile-only">
-              <img src="assets/img/hero/me.png" alt="Rajib Hassan" />
+              <img src="pic/RAJ.png" alt="Rajib Hassan" />
             </div>
 
             <p class="hero-description">
@@ -67,15 +67,18 @@
             </p>
 
             <div class="hero-actions">
-              <a href="#" class="btn">Download CV</a>
+              <a href="assets/cv.pdf" download class="btn">
+                <i class="fa-solid fa-download"></i>
+                Download CV
+              </a>
 
-              <ul class="social-icons">
-                <li>
-                  <a href="https://github.com/HassanRajib" aria-label="GitHub">
-                    <img src="pic/github.png" alt="" />
-                  </a>
-                </li>
-              </ul>
+              <a
+                href="https://github.com/HassanRajib"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
             </div>
           </div>
 
@@ -88,13 +91,19 @@
         <!-- FUN FACTS -->
         <div class="funfact-area">
           <div class="funfact-item">
-            <div class="number" data-count="2">0</div>
-            <div class="text">Years of<br />Experience</div>
+            <div class="number">2+</div>
+            <div class="text">
+              Years of<br />
+              Experience
+            </div>
           </div>
 
           <div class="funfact-item">
-            <div class="number" data-count="5">0+</div>
-            <div class="text">Projects<br />Completed</div>
+            <div class="number">5+</div>
+            <div class="text">
+              Projects<br />
+              Completed
+            </div>
           </div>
         </div>
       </div>
@@ -198,22 +207,25 @@ performance.|Integrated React Router for smooth client-side navigation between p
           >
             <img src="pic/cashc.png" />
             <div class="overlay">
-          <h3>Cash Counter POS</h3>
-          <p>A Static site in wp</p>
-        </div>
+              <h3>Cash Counter POS</h3>
+              <p>A Static site in wp</p>
+            </div>
           </div>
-          <div class="portfolio-item fun"
-          data-title="Chess"
-        data-desc="A Broken Game"
-        data-live="https://taxzen.variationbd.com/"
-        data-github="https://github.com/HassanRajib/chessGame"
-        data-tech="React"
-        data-work="Its a broken game, but you can play it, Just need two player.| This is a tribute to my dad.">
-        <img src="pic/chess.png" />
-      <div class="overlay">
-          <h3>Chess</h3>
-          <p>A Broken Game</p>
-        </div></div>
+          <div
+            class="portfolio-item fun"
+            data-title="Chess"
+            data-desc="A Broken Game"
+            data-live="https://taxzen.variationbd.com/"
+            data-github="https://github.com/HassanRajib/chessGame"
+            data-tech="React"
+            data-work="Its a broken game, but you can play it."
+          >
+            <img src="pic/chess.png" />
+            <div class="overlay">
+              <h3>Chess</h3>
+              <p>A Broken Game</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

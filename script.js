@@ -1,25 +1,3 @@
-const counters = document.querySelectorAll(".number");
-
-const runCounter = () => {
-  counters.forEach((counter) => {
-    const target = +counter.getAttribute("data-count");
-    let current = 0;
-
-    const increment = () => {
-      if (current < target) {
-        current++;
-        counter.textContent = current;
-        setTimeout(increment, 120);
-      } else {
-        counter.textContent = target;
-      }
-    };
-
-    increment();
-  });
-};
-
-window.addEventListener("load", runCounter);
 
 // projects
 // FILTER LOGIC
@@ -27,14 +5,14 @@ const filterButtons = document.querySelectorAll(".button-group button");
 const portfolioItems = document.querySelectorAll(".portfolio-item");
 
 // FILTER
-filterButtons.forEach(btn => {
+filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    filterButtons.forEach(b => b.classList.remove("active"));
+    filterButtons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
     const filter = btn.dataset.filter;
 
-    portfolioItems.forEach(item => {
+    portfolioItems.forEach((item) => {
       item.classList.toggle(
         "hide",
         filter !== "*" && !item.classList.contains(filter)
@@ -54,7 +32,7 @@ const liveLink = document.getElementById("liveLink");
 const githubLink = document.getElementById("githubLink");
 const closeBtn = document.querySelector(".close");
 
-portfolioItems.forEach(item => {
+portfolioItems.forEach((item) => {
   item.addEventListener("click", () => {
     modal.classList.add("active");
 
@@ -68,7 +46,7 @@ portfolioItems.forEach(item => {
 
     modalWork.innerHTML = "";
     if (item.dataset.work) {
-      item.dataset.work.split("|").forEach(point => {
+      item.dataset.work.split("|").forEach((point) => {
         const li = document.createElement("li");
         li.textContent = point;
         modalWork.appendChild(li);
@@ -78,8 +56,7 @@ portfolioItems.forEach(item => {
 });
 
 closeBtn.onclick = () => modal.classList.remove("active");
-modal.onclick = e => e.target === modal && modal.classList.remove("active");
-
+modal.onclick = (e) => e.target === modal && modal.classList.remove("active");
 
 // preloader function
 window.addEventListener("load", () => {
@@ -87,10 +64,6 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     preloader.classList.add("hide");
-
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 1000);
   }, 1200);
 });
 
@@ -101,10 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const pathLength = progressPath.getTotalLength();
 
-  // Initialize stroke
-  progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+  progressPath.style.strokeDasharray = pathLength;
   progressPath.style.strokeDashoffset = pathLength;
-  progressPath.style.transition = "stroke-dashoffset 0.1s linear";
 
   const updateProgress = () => {
     const scrollTop = window.scrollY;
@@ -115,24 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     progressPath.style.strokeDashoffset = progress;
 
-    // Toggle visibility
-    if (scrollTop > 50) {
-      progressWrap.classList.add("active");
-    } else {
-      progressWrap.classList.remove("active");
-    }
+    progressWrap.classList.toggle("active", scrollTop > 100);
   };
 
-  updateProgress();
   window.addEventListener("scroll", updateProgress);
+  updateProgress();
 
-  // Scroll to top on click
-  progressWrap.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  progressWrap.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 
@@ -147,3 +108,50 @@ track.addEventListener("mouseenter", () => {
 track.addEventListener("mouseleave", () => {
   track.style.animationPlayState = "running";
 });
+
+// test
+
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+
+const resizeCanvas = () => {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+};
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+const letters = "アカサタナハマヤラワ0123456789";
+const fontSize = 16;
+let columns;
+let drops;
+
+const initMatrix = () => {
+  columns = Math.floor(canvas.width / fontSize);
+  drops = Array(columns).fill(1);
+};
+
+initMatrix();
+
+const drawMatrix = () => {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#00ff88";
+  ctx.font = `${fontSize}px monospace`;
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
+
+  requestAnimationFrame(drawMatrix);
+};
+
+drawMatrix();
