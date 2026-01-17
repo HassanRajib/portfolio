@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md Rajib Hassan | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- preloader -->
+    <div class="preloader" id="preloader">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path
+          id="preloaderSvg"
+          d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
+        ></path>
+      </svg>
+
+      <div class="preloader-heading">
+        <div class="load-text">
+          <span>L</span>
+          <span>o</span>
+          <span>a</span>
+          <span>d</span>
+          <span>i</span>
+          <span>n</span>
+          <span>g</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- back to top -->
+
+    <div class="progress-wrap" id="scrollUp">
+      <svg
+        class="progress-circle"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <!-- hero -->
+    <section class="hero-section" id="intro">
+      <!-- SVG TEXT -->
+
+      <div class="container">
+        <div class="hero-grid">
+          <!-- LEFT CONTENT -->
+          <div class="hero-content">
+            <span class="hero-sub-title">I am Rajib Hassan</span>
+            <h1 class="hero-title">Web Developer</h1>
+
+            <!-- MOBILE IMAGE -->
+            <div class="hero-image mobile-only">
+              <img src="assets/img/hero/me.png" alt="Rajib Hassan" />
+            </div>
+
+            <p class="hero-description">
+              I'm a Frontend Developer with extensive hands-on experience
+              building responsive, full-stack web applications using React,
+              Next.js, and Node.js. Skilled in Tailwind CSS and Shadcn UI to
+              create modern, user-focused interfaces, with strong understanding
+              of RESTful APIs and PostgreSQL databases.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#" class="btn">Download CV</a>
+
+              <ul class="social-icons">
+                <li>
+                  <a href="https://github.com/HassanRajib" aria-label="GitHub">
+                    <img src="pic/github.png" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DESKTOP IMAGE -->
+          <div class="hero-image desktop-only">
+            <img src="pic/RAJ.png" alt="Rajib Hassan" />
+          </div>
+        </div>
+
+        <!-- FUN FACTS -->
+        <div class="funfact-area">
+          <div class="funfact-item">
+            <div class="number" data-count="2">0</div>
+            <div class="text">Years of<br />Experience</div>
+          </div>
+
+          <div class="funfact-item">
+            <div class="number" data-count="5">0+</div>
+            <div class="text">Projects<br />Completed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- projects -->
+    <section class="portfolio-section" id="works-section">
+      <div class="container">
+        <!-- SECTION HEADER -->
+        <div class="section-header">
+          <h2>My Recent Works</h2>
+          <p>
+            We put your ideas and wishes into a unique web project that inspires
+            you and your customers.
+          </p>
+        </div>
+
+        <!-- FILTER BUTTONS (GLASS) -->
+        <div class="portfolio-filter">
+          <div class="button-group glass-filter">
+            <button class="active" data-filter="*">All</button>
+            <button data-filter="full">Full stack</button>
+            <button data-filter="wp">WordPress</button>
+            <button data-filter="raw">HTML</button>
+            <button data-filter="fun">Fun</button>
+          </div>
+        </div>
+
+        <!-- PORTFOLIO GRID -->
+        <div class="portfolio-grid">
+          <!-- PROJECT 1 (FULL DATA EXAMPLE) -->
+          <div
+            class="portfolio-item full"
+            data-title="Infinity Pathwayz"
+            data-desc="Student Consultancy Platform"
+            data-live="https://infinitypathwayz.com/"
+            data-github="https://github.com/HassanRajib/StudentConseltent"
+            data-tech="Next.js, Tailwind CSS, Shadcn UI, Node.js, Express.js, PostgreSQL"
+            data-work="Developed a live full-stack web app for a student consultancy firm to manage student questions and data efficiently.|Next.js was used to create SEO-friendly, fast-loading pages with detailed information for prospective students.|Integrated authentication|Deployed production build"
+          >
+            <img src="pic/if.png" alt="Infinity Pathwayz" />
+            <div class="overlay">
+              <h3>Infinity Pathwayz</h3>
+              <p>Student Consultancy Platform</p>
+            </div>
+          </div>
+
+          <!-- PROJECT 2–6 (YOU CAN EDIT LATER) -->
+          <div
+            class="portfolio-item full"
+            data-title="Mytiket"
+            data-desc="Event Ticketing Platform"
+            data-live="https://mytiketbd.com/"
+            data-github="https://github.com/HassanRajib/ticketfinal"
+            data-tech="TypeScript, Tailwind CSS, React, Vite, MongoDb"
+            data-work="Developed a responsive web application using React.js for event browsing and
+ticket booking.|Built modular and reusable UI components with a focus on scalability and
+performance.|Integrated React Router for smooth client-side navigation between pages.|Dark mode and light mode have been added for all pages."
+          >
+            <img src="pic/myti.png" />
+            <div class="overlay">
+              <h3>Mytiket</h3>
+              <p>Event Ticketing Platform</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item wp"
+            data-title="FoodVillage"
+            data-desc="Online store"
+            data-live="https://foodvillage-bd.com/"
+            data-tech="WordPress, WooCommerce, Slider Revolation"
+            data-work="It was the first full Online store I have created.|Used Slider Revolation for advance and dynamic carousel.|Custom JS code for selected products that will not delevery outsite Dhaka| Diploy the full project in Cpanel."
+          >
+            <img src="pic/foodvi.png" />
+            <div class="overlay">
+              <h3>FoodVillage</h3>
+              <p>Online Store</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item raw"
+            data-title="VPrint and packaging"
+            data-desc="Static site with HTML"
+            data-live="https://vprintpackaging.com/"
+            data-tech="HTML, CSS, JavaScript"
+            data-work="It was bit easy, because I had use a theme from evento.|Custom Hero section with animations| Diploy the full project in Cpanel."
+          >
+            <img src="pic/vprint.png" />
+            <div class="overlay">
+              <h3>VPrint and packaging</h3>
+              <p>Static site with HTML</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item wp"
+            data-title="Cash Counter POS"
+            data-desc="A Static site in wp"
+            data-live="https://cashcounterbd.com/"
+            data-tech="WordPress, wp form"
+            data-work="It was very first project of mine in WP| I had clone this site from WeDev POS website."
+          >
+            <img src="pic/cashc.png" />
+            <div class="overlay">
+          <h3>Cash Counter POS</h3>
+          <p>A Static site in wp</p>
+        </div>
+          </div>
+          <div class="portfolio-item fun"
+          data-title="Chess"
+        data-desc="A Broken Game"
+        data-live="https://taxzen.variationbd.com/"
+        data-github="https://github.com/HassanRajib/chessGame"
+        data-tech="React"
+        data-work="Its a broken game, but you can play it, Just need two player.| This is a tribute to my dad.">
+        <img src="pic/chess.png" />
+      <div class="overlay">
+          <h3>Chess</h3>
+          <p>A Broken Game</p>
+        </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="portfolio-modal" id="portfolioModal">
+      <div class="modal-content glass-card">
+        <span class="close">&times;</span>
+
+        <img id="modalImg" alt="" />
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+
+        <!-- LINKS -->
+        <div class="modal-links">
+          <a id="liveLink" target="_blank">Live Site</a>
+          <a id="githubLink" target="_blank">GitHub</a>
+        </div>
+
+        <!-- TECH -->
+        <div class="modal-section">
+          <h4>Technology Used</h4>
+          <p id="modalTech"></p>
+        </div>
+
+        <!-- WORK -->
+        <div class="modal-section">
+          <h4>What I Did</h4>
+          <ul id="modalWork"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- skills -->
+
+    <section class="skills-section">
+      <h2 class="section-title">My Skills</h2>
+
+      <div class="skills-carousel">
+        <div class="skills-track">
+          <!-- ORIGINAL SET -->
+          <div class="skill-card">
+            <img src="pic/html.png" alt="HTML" />
+            <span>HTML</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/css.png" alt="CSS" />
+            <span>CSS</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/js.png" alt="JavaScript" />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/react.png" alt="React" />
+            <span>React</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/next.png" alt="Next.js" />
+            <span>Next.js</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/tailwind.png" alt="Tailwind CSS" />
+            <span>Tailwind</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/psql.png" alt="PostgreSQL" />
+            <span>PostgreSQL</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/node.png" alt="Node.js" />
+            <span>Node.js</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/mbd.png" alt="mongo" />
+            <span>MongoDb</span>
+          </div>
+
+          <!-- CLONE SET (FOR INFINITE LOOP) -->
+          <div class="skill-card">
+            <img src="pic/html.png" alt="HTML" />
+            <span>HTML</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/css.png" alt="CSS" />
+            <span>CSS</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/js.png" alt="JavaScript" />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/react.png" alt="React" />
+            <span>React</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/next.png" alt="Next.js" />
+            <span>Next.js</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/tailwind.png" alt="Tailwind CSS" />
+            <span>Tailwind</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/psql.png" alt="PostgreSQL" />
+            <span>PostgreSQL</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/node.png" alt="Node.js" />
+            <span>Node.js</span>
+          </div>
+          <div class="skill-card">
+            <img src="pic/mbd.png" alt="mongo" />
+            <span>MongoDb</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- edu and ex -->
+    <section class="timeline-section">
+      <div class="timeline-container">
+        <!-- Experience -->
+        <div class="timeline-column">
+          <h2 class="timeline-title">My Experience</h2>
+
+          <div class="glass-card">
+            <span class="time">Sep, 2024 – Present</span>
+            <h3>Jr. Web Developer</h3>
+            <p>Variation Communications</p>
+          </div>
+
+          <div class="glass-card">
+            <span class="time">Fab, 2023 - Jun, 2024</span>
+            <h3>Data annotator</h3>
+            <p>Acme AI</p>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-column">
+          <h2 class="timeline-title">My Education</h2>
+
+          <div class="glass-card">
+            <span class="time">2024 - Running</span>
+            <h3>Diploma in Computer Science and Application</h3>
+            <p>Bangladesh Open University (BOU)</p>
+          </div>
+
+          <div class="glass-card">
+            <span class="time">2014 – 2016</span>
+            <h3>Higher Secondary Certificate</h3>
+            <p>Dhaka Commerce College</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- cource -->
+    <section class="courses-section">
+      <div class="courses-container">
+        <h2 class="courses-title">Short Courses</h2>
+
+        <div class="courses-grid">
+          <div class="glass-card course-card">
+            <span class="course-year">2024</span>
+            <h3>Android App Development</h3>
+            <!-- <p>NTVQF Level -4</p> -->
+            <p>
+              NTVQF Level - 4 <br />
+              Android Studio, Kotlin, Firebase
+            </p>
+          </div>
+
+          <div class="glass-card course-card">
+            <span class="course-year">2023</span>
+            <h3>WP Plugin Development</h3>
+
+            <p>
+              WeDevs Academy <br />
+              PHP, MySQL, WordPress
+            </p>
+          </div>
+
+          <div class="glass-card course-card">
+            <span class="course-year">2023</span>
+            <h3>Web Development</h3>
+            <p>
+              NTVQF Level - 2 <br />
+              HTML, CSS, JavaScript
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Md Rajib Hassan</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
