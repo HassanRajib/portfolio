@@ -599,9 +599,24 @@ footer {
 }
 
 /* CAROUSEL */
+/* --- BASE STYLES --- */
+.skills-section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+}
+
 .skills-carousel {
   overflow: hidden;
   width: 100%;
+  /* Added a subtle fade effect on the edges for a premium look */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .skills-track {
@@ -610,11 +625,16 @@ footer {
   animation: slide 35s linear infinite;
 }
 
+/* Pause animation on hover for better UX */
+.skills-track:hover {
+  animation-play-state: paused;
+}
+
 /* CARD */
 .skill-card {
   width: 120px;
   height: 120px;
-  margin-right: 50px;
+  margin-right: 50px; /* Gap between cards */
   background: linear-gradient(
     90deg,
     rgba(178, 140, 255, 0.18),
@@ -622,22 +642,14 @@ footer {
   );
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
   border: 1px solid rgba(178, 140, 255, 0.25);
   border-radius: 16px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    inset 0 0 0 rgba(255, 255, 255, 0);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
 }
 
 .skill-card img {
@@ -648,9 +660,54 @@ footer {
 }
 
 .skill-card span {
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
   opacity: 0.9;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .skill-card {
+    width: 100px; /* Smaller cards */
+    height: 100px;
+    margin-right: 30px; /* Smaller gap */
+    border-radius: 12px;
+  }
+
+  .skill-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skill-card span {
+    font-size: 14px;
+  }
+  
+  .skills-track {
+    animation-duration: 25s; /* Speed up slightly for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-card {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+  }
+
+  .skill-card img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .skill-card span {
+    font-size: 12px;
+  }
 }
 
 /* INFINITE LOOP */
@@ -738,6 +795,7 @@ footer {
 
   .timeline-title {
     font-size: 30px;
+    text-align: center;
   }
 }
 
