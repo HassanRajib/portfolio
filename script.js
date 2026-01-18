@@ -23,7 +23,6 @@ filterButtons.forEach((btn) => {
 
 // MODAL
 const modal = document.getElementById("portfolioModal");
-// const modalImg = document.getElementById("modalImg");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
 const modalTech = document.getElementById("modalTech");
@@ -35,20 +34,28 @@ const closeBtn = document.querySelector(".close");
 portfolioItems.forEach((item) => {
   item.addEventListener("click", () => {
     modal.classList.add("active");
-
-    modalImg.src = item.dataset.img || "";
     modalTitle.textContent = item.dataset.title || "";
     modalDesc.textContent = item.dataset.desc || "";
     modalTech.textContent = item.dataset.tech || "";
 
+    // Live link (always visible)
     liveLink.href = item.dataset.live || "#";
-    githubLink.href = item.dataset.github || "#";
+    liveLink.style.display = item.dataset.live ? "inline-block" : "none";
 
+    // GitHub link (ONLY show if exists)
+    if (item.dataset.github) {
+      githubLink.href = item.dataset.github;
+      githubLink.style.display = "inline-block";
+    } else {
+      githubLink.style.display = "none";
+    }
+
+    // Work list
     modalWork.innerHTML = "";
     if (item.dataset.work) {
       item.dataset.work.split("|").forEach((point) => {
         const li = document.createElement("li");
-        li.textContent = point;
+        li.textContent = point.trim();
         modalWork.appendChild(li);
       });
     }
@@ -58,13 +65,14 @@ portfolioItems.forEach((item) => {
 closeBtn.onclick = () => modal.classList.remove("active");
 modal.onclick = (e) => e.target === modal && modal.classList.remove("active");
 
+
 // preloader function
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
 
   setTimeout(() => {
     preloader.classList.add("hide");
-  }, 1200);
+  }, 1000);
 });
 
 // back to top function

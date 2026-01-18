@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Handjet:wght,ELSH@100..900,2&family=Iceland&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght,ELSH@100..900,2&family=Iceland&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
 * {
   margin: 0;
@@ -27,26 +28,10 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: 60px 0; /* Added padding for mobile breathing room */
 }
 
-/* SVG TEXT */
-.intro-text {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 100%;
-  opacity: 0.05;
-}
-
-.intro-text text {
-  font-size: 200px;
-  fill: none;
-  stroke: #fff;
-  stroke-width: 2;
-  letter-spacing: 20px;
-}
-
-/* GRID */
+/* GRID - 2 Columns on Desktop */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -54,42 +39,46 @@ body {
   gap: 40px;
 }
 
-/* CONTENT */
+/* CONTENT STYLES */
 .hero-sub-title {
   font-size: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.8;
+  display: block;
 }
 
 .hero-title {
   font-size: 56px;
   margin: 10px 0;
+  line-height: 1.1;
+  font-family: "Iceland", sans-serif;
+  font-weight: 400;
 }
 
 .hero-description {
   max-width: 500px;
   line-height: 1.6;
   opacity: 0.9;
+  margin-bottom: 30px;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 18px;
 }
 
-/* IMAGE */
+/* IMAGE STYLES */
 .hero-image img {
   max-width: 100%;
+  height: auto;
   border-radius: 12%;
+  display: block;
 }
 
-.mobile-only {
-  display: none;
-}
-
-/* ACTIONS */
+/* ACTIONS & BUTTONS */
 .hero-actions {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
-  border-radius: 20px;
 }
 
 .btn {
@@ -105,36 +94,20 @@ body {
   font-weight: 500;
 }
 
-.btn i {
-  font-size: 14px;
-}
-
 .btn:hover {
   background: #fff;
   color: #000;
 }
 
-/* SOCIAL */
-.social-icons {
-  display: flex;
-  gap: 12px;
-}
-
-.social-icons a {
-  width: 36px;
-  height: 36px;
-  border: 1px solid #fff;
-  display: grid;
-  place-items: center;
+.fa-github {
   color: #fff;
-  font-size: 18px;
-  border-radius: 50%;
-  transition: 0.3s ease;
+  font-size: 25px;
+  transition: 0.3s;
 }
 
-.social-icons a:hover {
-  background: #fff;
-  color: #000;
+.fa-github:hover {
+  color: #629FAD;
+  transform: scale(1.1);
 }
 
 /* FUN FACTS */
@@ -152,40 +125,74 @@ body {
   gap: 14px;
 }
 
-/* BIG NUMBER */
 .funfact-item .number {
-  font-size: 72px;
+  font-size: 64px; /* Slightly smaller for better fit */
   font-weight: 700;
   line-height: 1;
 }
 
-/* HALF SIZE TEXT */
 .funfact-item .text {
   font-size: 16px;
   line-height: 1.3;
   opacity: 0.8;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .funfact-area {
-    grid-template-columns: 1fr;
-    justify-items: center;
+/* --- PERFECT MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr; /* Stack columns vertically */
     text-align: center;
+    gap: 30px;
+  }
+
+  .hero-image {
+    order: -1; /* THIS MOVES THE IMAGE TO THE TOP */
+    max-width: 280px; /* Prevents image from being too huge on mobile */
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 38px; /* Resize for mobile screens */
+  }
+
+  .hero-description {
+    margin: 0 auto 20px auto;
+    text-align: justify;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .funfact-area {
+    grid-template-columns: 1fr; /* Stack fun facts on mobile */
+    justify-items: center;
+    gap: 30px;
   }
 
   .funfact-item {
     justify-content: center;
+    text-align: left;
   }
 }
 
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+  
+  .funfact-item .number {
+    font-size: 48px;
+  }
+}
 
 /* projects */
 
 /* SECTION */
 .portfolio-section {
   padding: 100px 20px;
-  /* background: #296374; */
+  background: transparent;
   color: #fff;
 }
 
@@ -196,7 +203,15 @@ body {
 }
 
 .section-header h2 {
-  font-size: 36px;
+  font-size: 46px;
+  font-family: "Iceland", sans-serif;
+  font-weight: 400;
+}
+
+.section-header p{
+  line-height: 1.6;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 18px;
 }
 
 /* FILTER */
@@ -230,23 +245,63 @@ body {
 /* GRID */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 500px);
-  justify-content: center;
+  grid-template-columns: repeat(2, 1fr); 
+  max-width: 1000px; /* Limits the total width on desktop to match your 500px+500px intent */
+  margin: 0 auto;
   gap: 30px;
 }
 
 .portfolio-item {
-  width: 400px;
-  height: 400px;
+  width: 100%; /* Changed from 400px to 100% to fill the grid cell */
+  height: 350px; /* You can adjust height as needed */
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 12px; /* Optional: adds a nice rounded look */
 }
 
 .portfolio-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images aren't stretched */
   display: block;
   transition: transform 0.4s ease;
+}
+
+@media (max-width: 992px) {
+  .portfolio-grid {
+    /* For tablets, we can keep 2 columns but reduce the gap */
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .portfolio-filter .button-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to go to the next line on small screens */
+    justify-content: center;
+    border-radius: 15px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+    max-width: 450px; /* Prevents cards from becoming too wide on mobile */
+  }
+
+  .portfolio-item {
+    height: 300px; /* Slightly shorter cards for mobile */
+  }
+
+  .overlay {
+    height: 30%; /* Slightly larger overlay for easier reading on touch */
+    opacity: 1; /* On mobile, overlays are often better visible by default */
+    background: rgba(0, 0, 0, 0.6);
+  }
 }
 
 /* .portfolio-item:hover img {
@@ -268,12 +323,12 @@ body {
 
 .portfolio-item:hover .overlay {
   opacity: 1;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 11px 11px;
 }
 
 .glass-filter {
   padding: 12px 20px;
-  border-radius: 40px;
+  border-radius: 50px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -311,13 +366,10 @@ body {
   padding: 20px;
   max-width: 600px;
   width: 90%;
-  text-align: justify;
+  max-height: 90vh; /* Prevents modal from being longer than the screen */
+  overflow-y: auto; /* Adds scroll if content is too long */
+  text-align: left; /* Changed from justify for better readability */
   position: relative;
-}
-
-.modal-content img {
-  width: 50%;
-  margin-bottom: 15px;
 }
 
 .modal-links {
@@ -333,6 +385,41 @@ body {
   border: 1px solid #fff;
   color: #fff;
   text-decoration: none;
+}
+
+/* model */
+.modal-section {
+  margin-top: 30px;
+}
+
+.modal-section h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.modal-section p {
+  line-height: 1.6;
+}
+
+#modalWork {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+#modalWork li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .modal-links {
+    flex-direction: column; /* Stack Live/GitHub links on very small phones */
+    gap: 10px;
+  }
+  
+  .modal-links a {
+    text-align: center;
+  }
 }
 
 .close {
@@ -351,7 +438,7 @@ footer {
 }
 
 /* pre loader css */
-/* PRELOADER BASE */
+/* BASE PRELOADER */
 .preloader {
   position: fixed;
   inset: 0;
@@ -360,20 +447,20 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Added to prevent scrolling while loading */
+  overflow: hidden; 
 }
 
 /* GRADIENT CIRCLE */
 .loader-circle {
   position: absolute;
-  width: 140px;
+  width: 140px; /* Default Desktop size */
   height: 140px;
   border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    #0b1c3d,
-    #caff33
-  );
+  background: linear-gradient(135deg, #0b1c3d, #caff33);
   animation: spin 1.6s linear infinite;
+  /* GPU acceleration for smoother mobile animation */
+  will-change: transform; 
 }
 
 /* INNER CUTOUT */
@@ -393,11 +480,43 @@ footer {
 
 .load-text {
   font-family: "Handjet", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 32px; /* Default Desktop size */
   letter-spacing: 3px;
   color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+  .loader-circle {
+    /* Scale down the circle for smaller screens */
+    width: 110px;
+    height: 110px;
+  }
+
+  .loader-circle::before {
+    /* Keep the border thickness consistent */
+    inset: 5px; 
+  }
+
+  .load-text {
+    /* Scale down font size so it fits inside the circle */
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .load-text {
+    font-size: 18px;
+  }
 }
 
 /* SPIN ANIMATION */
@@ -411,11 +530,10 @@ footer {
 .preloader.hide {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease, visibility 0.8s;
 }
 
 /* back to top css */
-/* BACK TO TOP BUTTON */
 .progress-wrap {
   position: fixed;
   right: 30px;
@@ -465,7 +583,6 @@ footer {
 }
 
 /* carousel */
-
 .skills-section {
   padding: 100px 20px;
   background: transparent;
@@ -476,7 +593,9 @@ footer {
 .section-title {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 32px;
+  font-size: 46px;
+  font-family: "Iceland", sans-serif;
+  font-weight: 400;
 }
 
 /* CAROUSEL */
@@ -512,9 +631,13 @@ footer {
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 0 rgba(255, 255, 255, 0);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 rgba(255, 255, 255, 0);
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .skill-card img {
@@ -540,7 +663,6 @@ footer {
   }
 }
 
-/* edu */
 
 /* Section */
 .timeline-section {
@@ -561,9 +683,11 @@ footer {
 
 /* Column title */
 .timeline-title {
-  font-size: 36px;
-  margin-bottom: 40px;
+  font-size: 46px;
+  margin-bottom: 36px;
   color: #fff;
+  font-family: "Iceland", sans-serif;
+  font-weight: 400;
 }
 
 /* Glass card */
@@ -621,7 +745,7 @@ footer {
 
 .courses-section {
   padding: 80px 20px;
-  background: radial-gradient(circle at top, #12071f, #000);
+  background: transparent;
   color: #fff;
   font-family: system-ui, sans-serif;
 }
@@ -633,9 +757,11 @@ footer {
 
 .courses-title {
   text-align: center;
-  font-size: 36px;
-  color: #b28cff;
+  font-size: 46px;
+  color: #fff;
   margin-bottom: 50px;
+  font-family: "Iceland", sans-serif;
+  font-weight: 400;
 }
 
 /* Grid */
@@ -654,7 +780,7 @@ footer {
 /* Year */
 .course-year {
   display: inline-block;
-  color: #b28cff;
+  color: #fff;
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -668,6 +794,7 @@ footer {
 .course-card p {
   font-size: 15px;
   opacity: 0.85;
+  line-height: 1.6;
 }
 
 /* Responsive */
@@ -679,32 +806,4 @@ footer {
   .courses-title {
     font-size: 30px;
   }
-}
-
-
-/* test */
-
-.matrix-section {
-  position: relative;
-  height: 60vh; /* or any height you want */
-  overflow: hidden;
-  background: #000;
-}
-
-/* CANVAS BACKGROUND */
-#matrixCanvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-/* CONTENT ABOVE MATRIX */
-.matrix-content {
-  position: relative;
-  z-index: 1;
-  color: #00ff88;
-  text-align: center;
-  padding-top: 100px;
 }
