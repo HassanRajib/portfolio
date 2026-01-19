@@ -355,6 +355,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  pointer-events: auto;
 }
 
 .portfolio-modal.active {
@@ -370,6 +371,7 @@ body {
   overflow-y: auto; /* Adds scroll if content is too long */
   text-align: left; /* Changed from justify for better readability */
   position: relative;
+pointer-events: auto;
 }
 
 .modal-links {

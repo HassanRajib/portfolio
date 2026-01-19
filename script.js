@@ -31,6 +31,10 @@ const liveLink = document.getElementById("liveLink");
 const githubLink = document.getElementById("githubLink");
 const closeBtn = document.querySelector(".close");
 
+document.querySelector(".modal-content").addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 portfolioItems.forEach((item) => {
   item.addEventListener("click", () => {
     modal.classList.add("active");
@@ -41,6 +45,7 @@ portfolioItems.forEach((item) => {
     // Live link (always visible)
     liveLink.href = item.dataset.live || "#";
     liveLink.style.display = item.dataset.live ? "inline-block" : "none";
+    liveLink.addEventListener("click", (e) => e.stopPropagation());
 
     // GitHub link (ONLY show if exists)
     if (item.dataset.github) {
@@ -49,6 +54,11 @@ portfolioItems.forEach((item) => {
     } else {
       githubLink.style.display = "none";
     }
+    githubLink.addEventListener("click", (e) => e.stopPropagation());
+
+    modal.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
 
     // Work list
     modalWork.innerHTML = "";
