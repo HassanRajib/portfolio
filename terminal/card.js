@@ -3,12 +3,12 @@ const terminalForm = document.getElementById("terminal-form");
 const terminalInput = document.getElementById("terminal-input");
 
 const githubUrl = "https://github.com/";
-const cvPath = "assets/rajib-cv.pdf";
-const previewImagePath = "assets/terminal-photo.svg";
+const cvPath = "asset/RajibCv.pdf";
+const previewImagePath = "../asset/my.png";
 const contactNumber = "+880 1516-125409";
 
 const state = {
-  mode: "locked"
+  mode: "locked",
 };
 
 function appendBlock(element) {
@@ -50,7 +50,7 @@ function renderImagePanel() {
   const panel = document.createElement("div");
   panel.className = "terminal-panel";
   panel.innerHTML = `
-    <img src="${previewImagePath}" alt="Profile preview">
+    <img src=${previewImagePath} alt="Profile preview">
     <p class="panel-input-note">Type <strong>x</strong> to close this panel.</p>
   `;
   appendBlock(panel);
@@ -100,7 +100,10 @@ function handleLockedInput(command) {
     return;
   }
 
-  appendText('Start command not recognized. Type "hi" or "hello".', "terminal-helper");
+  appendText(
+    'Start command not recognized. Type "hi" or "hello".',
+    "terminal-helper",
+  );
 }
 
 function triggerCvDownload() {
@@ -140,7 +143,10 @@ function handleMenuInput(command) {
       appendMenu();
       break;
     default:
-      appendText("Unknown command. Use pic, call, git, or cv.", "terminal-helper");
+      appendText(
+        "Unknown command. Use pic, call, git, or cv.",
+        "terminal-helper",
+      );
   }
 }
 
