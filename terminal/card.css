@@ -115,7 +115,8 @@ body {
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 6px;
+  padding-left: 5px;
+  /* padding-right: 6px; */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -170,6 +171,7 @@ body {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  /* flex-direction: row; */
   gap: 8px;
   margin-top: 12px;
   padding-top: 12px;
@@ -233,9 +235,9 @@ body {
   font-weight: 700;
 }
 
-@media (max-width: 620px) {
+@media screen and (max-width: 620px) {
   body {
-    padding: 12px;
+    padding: 5px;
   }
 
   .terminal-card {
@@ -244,11 +246,11 @@ body {
   }
 
   .terminal-input-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 
   .terminal-input {
-    width: 100%;
+    width: 90%;
   }
 }

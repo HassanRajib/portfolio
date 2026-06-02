@@ -2,7 +2,7 @@ const terminalOutput = document.getElementById("terminal-output");
 const terminalForm = document.getElementById("terminal-form");
 const terminalInput = document.getElementById("terminal-input");
 
-const githubUrl = "https://github.com/";
+const githubUrl = "https://github.com/HassanRajib";
 const cvPath = "asset/RajibCv.pdf";
 const previewImagePath = "../asset/my.png";
 const contactNumber = "+880 1516-125409";
@@ -71,7 +71,7 @@ function renderContactPanel() {
 
 function showWelcome() {
   terminalOutput.innerHTML = "";
-  appendText("admin terminal-card --help");
+  appendText("admin terminal");
   appendText('<!-- write "hi", or "hello" to start -->', "terminal-comment");
   appendText("This terminal unlocks after a greeting.");
   terminalInput.placeholder = "hi";

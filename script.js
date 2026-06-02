@@ -129,48 +129,48 @@ track.addEventListener("mouseleave", () => {
 
 // test
 
-const canvas = document.getElementById("matrixCanvas");
-const ctx = canvas.getContext("2d");
+// const canvas = document.getElementById("matrixCanvas");
+// const ctx = canvas.getContext("2d");
 
-const resizeCanvas = () => {
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
-};
+// const resizeCanvas = () => {
+//   canvas.width = canvas.offsetWidth;
+//   canvas.height = canvas.offsetHeight;
+// };
 
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+// resizeCanvas();
+// window.addEventListener("resize", resizeCanvas);
 
-const letters = "アカサタナハマヤラワ0123456789";
-const fontSize = 16;
-let columns;
-let drops;
+// const letters = "アカサタナハマヤラワ0123456789";
+// const fontSize = 16;
+// let columns;
+// let drops;
 
-const initMatrix = () => {
-  columns = Math.floor(canvas.width / fontSize);
-  drops = Array(columns).fill(1);
-};
+// const initMatrix = () => {
+//   columns = Math.floor(canvas.width / fontSize);
+//   drops = Array(columns).fill(1);
+// };
 
-initMatrix();
+// initMatrix();
 
-const drawMatrix = () => {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+// const drawMatrix = () => {
+//   ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+//   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#00ff88";
-  ctx.font = `${fontSize}px monospace`;
+//   ctx.fillStyle = "#00ff88";
+//   ctx.font = `${fontSize}px monospace`;
 
-  for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+//   for (let i = 0; i < drops.length; i++) {
+//     const text = letters[Math.floor(Math.random() * letters.length)];
+//     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
-    }
-    drops[i]++;
-  }
+//     if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+//       drops[i] = 0;
+//     }
+//     drops[i]++;
+//   }
 
-  requestAnimationFrame(drawMatrix);
-};
+//   requestAnimationFrame(drawMatrix);
+// };
 
-drawMatrix();
+// drawMatrix();
 

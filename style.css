@@ -13,11 +13,10 @@ body {
   margin: 0;
   background: #18182b;
   color: #fff;
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
+  /* min-height: 100vh; */
+  /* display: grid; */
+  /* place-items: center; */
+  /* padding: 24px; */
   /* background: transparent; */
   font-family: "Courier New", Courier, monospace, Arial, sans-serif ;
 }
@@ -34,7 +33,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 60px 0; /* Added padding for mobile breathing room */
+  padding: 10px 0; /* Added padding for mobile breathing room */
 }
 
 /* GRID - 2 Columns on Desktop */
@@ -69,6 +68,7 @@ body {
   margin-bottom: 30px;
   font-family: "Tilt Neon", sans-serif;
   font-size: 18px;
+  text-align: justify;
 }
 
 /* IMAGE STYLES */
@@ -111,7 +111,7 @@ body {
 }
 
 /* terminal */
-.terminal-card {
+/* .terminal-card {
   width: 550px;
   height: 400px;
   display: flex;
@@ -132,13 +132,8 @@ body {
   padding: 0 14px;
   background: #2c2c2c;
   border-bottom: 1px solid #3a3a3a;
-}
+} */
 
-.buttons {
-  display: flex;
-  gap: 8px;
-  z-index: 1;
-}
 
 .btn {
   position: relative;
@@ -333,14 +328,14 @@ body {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  max-width: 1000px; /* Limits the total width on desktop to match your 500px+500px intent */
+  max-width: 1200px; /* Limits the total width on desktop to match your 500px+500px intent */
   margin: 0 auto;
   gap: 30px;
 }
 
 .portfolio-item {
-  width: 100%; /* Changed from 400px to 100% to fill the grid cell */
-  height: 350px; /* You can adjust height as needed */
+  width: 90%; /* Changed from 400px to 100% to fill the grid cell */
+  height: 450px; /* You can adjust height as needed */
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -350,7 +345,7 @@ body {
 .portfolio-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures images aren't stretched */
+  object-fit: fill; /* Ensures images aren't stretched */
   display: block;
   transition: transform 0.4s ease;
 }
