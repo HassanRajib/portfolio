@@ -35,57 +35,59 @@ body {
   margin: 0;
   width: 14rem;
   height: 18rem;
-  text-align: center;
+  text-align: ;
   line-height: 18rem;
   font-size: 2rem;
-  border: 5px solid white;
+  /* border: 5px solid white; */
   border-radius: 15px;
   position: absolute;
   top: 0;
   left: 0;
-  background-size: cover;
-  box-shadow: #000 1px 1px 5px, #000 -1px -1px 5px;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* box-shadow: #000 1px 1px 5px, #000 -1px -1px 5px; */
 }
 
 .cards li:nth-of-type(1) {
-  background-image: url(https://picsum.photos/800/600?random=1);
+  background-image: url(../pic/html.png);
 }
 
 .cards li:nth-of-type(2) {
-  background-image: url(https://picsum.photos/800/600?random=2);
+  background-image: url(../pic/js.png);
 }
 
 .cards li:nth-of-type(3) {
-  background-image: url(https://picsum.photos/800/600?random=3);
+  background-image: url(../pic/mbd.png);
 }
 
 .cards li:nth-of-type(4) {
-  background-image: url(https://picsum.photos/800/600?random=4);
+  background-image: url(../pic/next.png);
 }
 
 .cards li:nth-of-type(5) {
-  background-image: url(https://picsum.photos/800/600?random=5);
+  background-image: url(../pic/node.png);
 }
 
 .cards li:nth-of-type(6) {
-  background-image: url(https://picsum.photos/800/600?random=6);
+  background-image: url(../pic/psql.png);
 }
 
 .cards li:nth-of-type(7) {
-  background-image: url(https://picsum.photos/800/600?random=7);
+  background-image: url(../pic/ts.png);
 }
 
 .cards li:nth-of-type(8) {
-  background-image: url(https://picsum.photos/800/600?random=8);
+  background-image: url(../pic/react.png);
 }
 
 .cards li:nth-of-type(9) {
-  background-image: url(https://picsum.photos/800/600?random=9);
+  background-image: url(../pic/css.png);
 }
 
-.cards li:nth-of-type(10) {
-  background-image: url(https://picsum.photos/800/600?random=10);
-}
+/* .cards li:nth-of-type(10) {
+  background-image: url("");
+} */
 
 
 li:hover {
