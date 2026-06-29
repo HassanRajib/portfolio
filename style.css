@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght,ELSH@100..900,2&family=Iceland&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+
+:root {
+  --header-outer-height: 110px;
+  --header-inner-height: 70px;
+  --header-height-difference: calc(
+    var(--header-outer-height) - var(--header-inner-height)
+  );
+  --header-bg: rgba(0, 0, 0, 0.6);
+}
 
 * {
   margin: 0;
@@ -18,7 +27,7 @@ body {
   /* place-items: center; */
   /* padding: 24px; */
   /* background: transparent; */
-  font-family: "Courier New", Courier, monospace, Arial, sans-serif ;
+  font-family: "Courier New", Courier, monospace, Arial, sans-serif;
 }
 
 .container {
@@ -27,6 +36,187 @@ body {
   padding: 0 20px;
 }
 
+/* head */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100px;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+
+  background: transparent;
+
+  transition:
+    all 0.45s ease,
+    background 0.45s ease,
+    width 0.45s ease,
+    height 0.45s ease,
+    border-radius 0.45s ease,
+    transform 0.45s ease;
+}
+
+/*========================
+Container
+========================*/
+
+.contas {
+  width: 100%;
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 30px;
+}
+
+/*========================
+Logo
+========================*/
+
+.logo img {
+  width: 170px;
+  transition: 0.45s;
+}
+
+/*========================
+Navigation
+========================*/
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #2f80ed;
+}
+
+/*========================
+Hamburger
+========================*/
+
+.menu-btn {
+  display: none;
+
+  width: 35px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  display: block;
+
+  width: 100%;
+  height: 3px;
+
+  margin: 7px 0;
+
+  background: #fff;
+
+  transition: 0.4s;
+}
+
+/*========================
+Scrolled Style
+========================*/
+
+.header.scrolled {
+  width: 80%;
+
+  height: 80px;
+
+  top: 15px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.header.scrolled .logo img {
+  width: 140px;
+}
+
+.header.scrolled .nav a {
+  color: #222;
+}
+
+.header.scrolled .menu-btn span {
+  background: #222;
+}
+
+/*========================
+Mobile
+========================*/
+
+@media (max-width: 900px) {
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+
+  .nav {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    background: #fff;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 30px 0;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-20px);
+
+    transition: 0.4s;
+  }
+
+  .nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(15px);
+  }
+
+  .nav a {
+    color: #222;
+  }
+}
 /* HERO SECTION */
 .hero-section {
   position: relative;
@@ -106,7 +296,7 @@ body {
 }
 
 .fa-github:hover {
-  color: #629FAD;
+  color: #629fad;
   transform: scale(1.1);
 }
 
@@ -134,7 +324,6 @@ body {
   border-bottom: 1px solid #3a3a3a;
 } */
 
-
 .btn {
   position: relative;
   width: 12px;
@@ -160,7 +349,9 @@ body {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
 }
 
 .btn:hover::after,
@@ -263,7 +454,7 @@ body {
   .hero-title {
     font-size: 32px;
   }
-  
+
   .funfact-item .number {
     font-size: 48px;
   }
@@ -290,7 +481,7 @@ body {
   font-weight: 400;
 }
 
-.section-header p{
+.section-header p {
   line-height: 1.6;
   font-family: "Tilt Neon", sans-serif;
   font-size: 18px;
@@ -327,7 +518,7 @@ body {
 /* GRID */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   max-width: 1200px; /* Limits the total width on desktop to match your 500px+500px intent */
   margin: 0 auto;
   gap: 30px;
@@ -453,7 +644,7 @@ body {
   overflow-y: auto; /* Adds scroll if content is too long */
   text-align: left; /* Changed from justify for better readability */
   position: relative;
-pointer-events: auto;
+  pointer-events: auto;
 }
 
 .modal-links {
@@ -500,7 +691,7 @@ pointer-events: auto;
     flex-direction: column; /* Stack Live/GitHub links on very small phones */
     gap: 10px;
   }
-  
+
   .modal-links a {
     text-align: center;
   }
@@ -532,7 +723,7 @@ footer {
   justify-content: center;
   align-items: center;
   /* Added to prevent scrolling while loading */
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* GRADIENT CIRCLE */
@@ -544,7 +735,7 @@ footer {
   background: linear-gradient(135deg, #0b1c3d, #caff33);
   animation: spin 1.6s linear infinite;
   /* GPU acceleration for smoother mobile animation */
-  will-change: transform; 
+  will-change: transform;
 }
 
 /* INNER CUTOUT */
@@ -582,7 +773,7 @@ footer {
 
   .loader-circle::before {
     /* Keep the border thickness consistent */
-    inset: 5px; 
+    inset: 5px;
   }
 
   .load-text {
@@ -614,7 +805,9 @@ footer {
 .preloader.hide {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.8s ease, visibility 0.8s;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s;
 }
 
 /* back to top css */
@@ -699,8 +892,20 @@ footer {
   overflow: hidden;
   width: 100%;
   /* Added a subtle fade effect on the edges for a premium look */
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
 
 .skills-track {
@@ -771,7 +976,7 @@ footer {
   .skill-card span {
     font-size: 14px;
   }
-  
+
   .skills-track {
     animation-duration: 25s; /* Speed up slightly for smaller screens */
   }
@@ -803,7 +1008,6 @@ footer {
     transform: translateX(-50%);
   }
 }
-
 
 /* Section */
 .timeline-section {

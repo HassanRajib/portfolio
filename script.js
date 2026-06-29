@@ -1,4 +1,3 @@
-
 // projects
 // FILTER LOGIC
 const filterButtons = document.querySelectorAll(".button-group button");
@@ -15,7 +14,7 @@ filterButtons.forEach((btn) => {
     portfolioItems.forEach((item) => {
       item.classList.toggle(
         "hide",
-        filter !== "*" && !item.classList.contains(filter)
+        filter !== "*" && !item.classList.contains(filter),
       );
     });
   });
@@ -57,8 +56,8 @@ portfolioItems.forEach((item) => {
     githubLink.addEventListener("click", (e) => e.stopPropagation());
 
     modal.addEventListener("click", () => {
-  modal.classList.remove("active");
-});
+      modal.classList.remove("active");
+    });
 
     // Work list
     modalWork.innerHTML = "";
@@ -74,7 +73,6 @@ portfolioItems.forEach((item) => {
 
 closeBtn.onclick = () => modal.classList.remove("active");
 modal.onclick = (e) => e.target === modal && modal.classList.remove("active");
-
 
 // preloader function
 window.addEventListener("load", () => {
@@ -174,3 +172,24 @@ track.addEventListener("mouseleave", () => {
 
 // drawMatrix();
 
+//
+// head
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 20) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+// mobile togol
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("active");
+
+  menuBtn.classList.toggle("open");
+});
